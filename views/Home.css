@@ -1,0 +1,295 @@
+body{
+    background-color: lightblue;
+    font-family: monospace
+}
+
+a.main-title-link:link {
+    text-decoration: none;
+    color: #3789A2;
+}
+a.main-title-link:visited {
+    text-decoration: none;
+    color: #3789A2;
+}
+a.main-title-link:hover {
+    text-decoration: none;
+    color: #3789A2;
+}
+a.main-title-link:active {
+    text-decoration: none;
+    color: #3789A2;
+}
+
+a.category-link:link {
+    text-decoration: none;
+    color: purple;
+}
+a.category-link:visited {
+    text-decoration: none;
+    color: purple;
+}
+a.category-link:hover {
+    text-decoration: none;
+    color: purple;
+}
+a.category-link:active {
+    text-decoration: none;
+    color: purple;
+}
+
+a.header-link:link {
+    text-decoration: none;
+    color: rgb(25, 82, 168);
+}
+a.header-link:visited {
+    text-decoration: none;
+    color: rgb(25, 82, 168);
+}
+a.header-link:hover {
+    text-decoration: none;
+    color: rgb(25, 82, 168);
+}
+a.header-link:active {
+    text-decoration: none;
+    color: rgb(25, 82, 168);
+}
+
+.header-link {
+    color: rgb(25, 82, 168)
+}
+
+#main-title {
+    color: #3789A2;
+    text-align: center;
+    font-size: 5em;
+}
+
+#mini-title {
+    color: #3789A2;
+    text-align: left;
+    font-size: 3em;
+}
+
+#search{
+    position: absolute;
+    left: calc(50% - 135px)
+}
+
+button {
+    width: 200px;
+    height: 66px;
+    background-color: #0B2E38;
+    border: none;
+    color: white;
+    padding: 1em 1.2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-style: outset;
+    border-color: rgb(8, 56, 95)
+}
+
+.dark-button{
+    font-size: 0.8em;
+}
+
+
+#books-button{
+    position: absolute;
+    left: 300px;
+    top: 20px
+}
+
+#users-button{
+    position: absolute;
+    left: 520px;
+    top: 20px
+}
+
+#in-out-button{
+    position: absolute;
+    left: 740px;
+    top: 20px
+}
+
+#fines-button{
+    position: absolute;
+    left: 960px;
+    top: 20px
+}
+
+
+#account-button{
+    position:absolute;
+    left: calc(100% - 240px);
+    top: 10em;
+    background-color: #3789A2;
+    border-color: rgb(55, 165, 199);
+    height:40px;
+    text-align: center;
+    font-size:0.75em
+}
+
+#category-button{
+    position: absolute;
+    left: calc(50% - 210px);
+    top: 23em;
+    background-color: #3789A2;
+    border-color: rgb(55, 165, 199);
+}
+
+#recommended-button{
+    position: absolute;
+    left: calc(50% + 10px);
+    top: 23em;
+    background-color: #3789A2;
+    border-color: rgb(55, 165, 199);
+}
+
+#add-button{
+    position: absolute;
+    top: 14em;
+    left:40px
+}
+
+#admins{
+    padding-top: 0.8em;
+    padding-left: 2em;
+    color: white
+}
+
+
+.nav-bar {
+    height: 7em;
+    width: 100%;
+    background-color: rgb(25, 82, 168);
+}
+
+.body {
+    width: 100%;
+    background-color: rgb(25, 82, 168);
+    z-index: 0;
+}
+
+.header {
+padding-left: 10em;
+    color: rgb(25, 82, 168)
+}
+
+
+
+#book-title {
+    margin-left: 4em;
+    color: rgb(25, 82, 168);
+    font-style: italic;
+    font-size: 4em;
+}
+
+#book-cover {
+    padding-left: 3em;
+}
+
+input[type=integer]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=text-in]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.check-in-button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* CHECK IN PAGE */
+.admin-form{
+    text-align: center;
+    color: white
+}
+
+#in{
+    position:absolute;
+    top: 26em;
+    left: calc(50% - 30em);
+}
+
+#out{
+    position:absolute;
+    top: 26em;
+    left: calc(50% + 10em);
+}
+
+#fine-form{
+    position:absolute;
+    top: 26em;
+    left: calc(50% - 10em);
+}
+
+.admin-header{
+    color:white;
+    outline-color: black;
+}
+
+#in-header{
+    position:absolute;
+    top: 10em;
+    left: calc(50% - 11.8em);
+    
+}
+
+#out-header{
+    position:absolute;
+    top: 10em;
+    left: calc(50% + 8.5em);
+}
+
+#fines-header{
+    position: absolute;
+    top: 10em;
+    left: calc(50%);
+}
+
+#add-book-message{
+    size: 2em;
+    align-self: center;
+    color: white;
+    text-align: center
+}
+
+#users-form{
+    padding-top: 3em;
+    padding-left: 50em;
+    padding-right: 50em;
+    padding-bottom: 3em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    color: white;
+    padding: 2em;
+
+  }
+  
+  td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: rgb(55, 165, 199);
+  }
