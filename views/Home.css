@@ -92,33 +92,8 @@ button {
 
 .dark-button{
     font-size: 0.8em;
+    margin-left: 3em;
 }
-
-
-#books-button{
-    position: absolute;
-    left: 300px;
-    top: 20px
-}
-
-#users-button{
-    position: absolute;
-    left: 520px;
-    top: 20px
-}
-
-#in-out-button{
-    position: absolute;
-    left: 740px;
-    top: 20px
-}
-
-#fines-button{
-    position: absolute;
-    left: 960px;
-    top: 20px
-}
-
 
 #account-button{
     position:absolute;
@@ -159,6 +134,12 @@ button {
     color: white
 }
 
+#fine{
+    color: white;
+    size: 4em;
+    padding: 3em;
+    align-content: center
+}
 
 .nav-bar {
     height: 7em;
@@ -214,7 +195,6 @@ input[type=text-in]{
     cursor: pointer;
 }
 
-/* CHECK IN PAGE */
 .admin-form{
     text-align: center;
     color: white
@@ -282,14 +262,14 @@ table {
     color: white;
     padding: 2em;
 
-  }
+}
   
-  td, th {
+td, th {
     border: 2px solid black;
     text-align: left;
     padding: 8px;
-  }
+}
   
-  tr:nth-child(odd) {
+tr:nth-child(odd) {
     background-color: rgb(55, 165, 199);
-  }
+}

@@ -1,5 +1,3 @@
-
-
 <html>
     <head>
         <title> The Empty Library </title>
@@ -19,12 +17,22 @@
 
         <p><button id="account-button">My Account</button></p>
         <h1 id="mini-title">  <a href = '/' class='main-title-link'> The Empty Library</a> </h1>
-        <h1 class="header">  - Fines </h1>
+        <h1 class="header">  - Fines - Fine User </h1>
         <div class="body">
-                <form class = "admin-form" id = "users-form" action ="/fines/fine" method = post>
-                    User ID: <input type="integer" name="user-id-in">
-                    <input type="submit" class = 'check-in-button' value="Go">
-                </form>
+        <h1 id = 'add-book-message'> {{message}} </h1>
+            <h1 id = 'fine'>
+                User ID : {{user_ID}} <br/><br/>
+                User Name : {{user_first_name}} {{user_second_name}} <br/><br/>
+                Total Fine: {{user_fine}} <br/><br/>
+            </h1>
+
+            <form class = "admin-form" id = "users-form" action ="/fines/fine/submit" method = post>
+                Fine Paid: <input type="integer" name="fine_value">
+                <input type="hidden" name="user_id" value={{user_ID}}>
+                <input type="submit" class = 'check-in-button' value="Go">
+                %user_ID = user_ID
+            </form>
+
         </div>
 
     </body>
