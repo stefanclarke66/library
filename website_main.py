@@ -130,6 +130,10 @@ def check_in(db):
     book_id = request.forms.get('book-id-in')
     db.execute('UPDATE book SET in_library = 0 WHERE id = ?', (book_id,))
     book = db.execute('SELECT title FROM book WHERE id = ?', (book_id,)).fetchone()
+    loan = db.execute('SELECT MAX(id) FROM (SELECT * FROM loan WHERE( book_id = ? AND user_id = ?))', (user_id, book_id)).fetchone()
+    id = loan[0]
+    db.execute('UPDATE loan SET out = 0 WHERE id = ?', (id,))
+
     bookname = book['title']
     message = f'Returning {bookname}'
     return template('in-out', message = message)
@@ -141,6 +145,45 @@ def check_out(db):
     time_out = request.forms.get('time-out')
     time_out = int(time_out)
     day_due = datetime.datetime.now() + datetime.timedelta(days = time_out)
+    db.execute('UPDATE book SET in_library = 1 WHERE id = ?', (book_id,))
+    db.execute('INSERT INTO loan (user_id, book_id, out_date, due_date, out, reserved) VALUES (?, ?, ?, ?, ?, ?) ', (user_id, book_id, datetime.datetime.now(), day_due, 1, 0))
+    book_name = db.execute('SELECT * FROM book WHERE id = ?', (book_id)).fetchone()
+    book_name = book_name['title']
+    message = f'Loaning out {book_name}. Due for return {day_due}'
+    return template('in-out', message = message)
+
+@post('/books/search')
+def findbook(db):
+    book_search = request.forms.get('find-book')
+    results = db.execute('''SElECT * FROM book WHERE(
+                                ID = ? OR
+                                title LIKE ? OR
+                                author_id LIKE ?
+                                )''', (book_search, f'%{book_search}%', f'%{book_search}%')).fetchall()
+    book_list = []
+    for book in results:
+        author_id = book['author_id']
+        author_first_name = db.execute('SELECT first_name FROM author WHERE id = ?', (author_id,)).fetchone()[0]
+        author_second_name = db.execute('SELECT last_name FROM author WHERE id = ?', (author_id,)).fetchone()[0]
+        author_name = author_first_name + " " + author_second_name
+        book_id = book['id']
+        if book['in_library'] == 1:
+            out = 'Yes'
+            loan_id = db.execute('SELECT MAX(id) FROM (SELECT * FROM loan WHERE( book_id = ?))', (book_id,)).fetchone()[0]
+            due_date = db.execute('SElECT due_date FROM loan WHERE id = ?', (loan_id,)).fetchone()[0]
+            user_rented = db.execute('SElECT user_id FROM loan WHERE id = ?', (loan_id,)).fetchone()[0]
+        else:
+            out = 'No'
+            due_date = ' - '
+            user_rented = ' - '
+        book_list.append([book['id'], book['title'], book['author_id'], out, author_name, due_date, user_rented])
+    number_results = len(book_list)
+
+    return template('find-book', book_list = book_list, number_results = number_results)
+
+@post('/fines/fine')
+def fineuser(db):
+    user_id = request.forms.get('user-id-in')
 
 
 
