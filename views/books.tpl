@@ -25,6 +25,13 @@
         <div class="body"> 
 
         <h1 id = 'add-book-message'> {{add_remove_message}} </h1>
+            
+            <form class = "admin-form" id = "users-form" action ="/books/search" method="post">
+                Find Book <br/> <br/>
+                <input type="integer" name="find-book">
+                <input type="submit" class = 'check-in-button' value="Go">
+            </form> 
+
 
             <form class = "admin-form" id = "users-form" action ="/books/add" method="post">
                 Add Book <br/> <br/>

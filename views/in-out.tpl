@@ -28,14 +28,14 @@
         % if defined('message'):
         <h1 id = 'add-book-message'> {{message}} </h1>
         %end
-            <form class = "admin-form" id = "users-form" action ="/in" method = "post">
+            <form class = "admin-form" id = "users-form" action ="/in-out/in" method = "post">
                 Check In: <br/> <br/>
                 User ID: <input type="integer" name="user-id-in"> <br/> <br/>
                 Book ID: <input type="integer" name="book-id-in"> <br/> <br/>
                 <input type="submit" class = 'check-in-button' value="Go">
             </form>
 
-            <form class = "admin-form" id = "users-form" action ="/out" method = "post">
+            <form class = "admin-form" id = "users-form" action ="/in-out/out" method = "post">
                 Check Out: <br/> <br/>
                 User ID: <input type="integer" name="user-id-out"> <br/> <br/>
                 Book ID: <input type="integer" name="book-id-out"> <br/> <br/>

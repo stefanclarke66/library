@@ -22,7 +22,7 @@
         <h1 id="mini-title">  <a href = '/' class='main-title-link'> The Empty Library</a> </h1>
         <h1 class="header">  - Fines </h1>
         <div class="body">
-                <form class = "admin-form" id = "users-form" action ="/">
+                <form class = "admin-form" id = "users-form" action ="/fines/fine" method = post>
                     User ID: <input type="integer" name="user-id-in">
                     <input type="submit" class = 'check-in-button' value="Go">
                 </form>
